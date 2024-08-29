@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    class Forma{
+        calculaArea(){
+
+        }
+    }
+    class Quadrado extends Forma{
+        constructor(lado) {
+            super();
+            this.lado = lado;
+        }
+
+    calculaArea(){
+        return this.lado*this.lado
+        }
+    }
+    class Circulo extends Forma{
+        constructor(raio){
+            super();
+            this.raio = raio;
+        }
+        calculaArea(){
+            return 3.14*(this.raio*this.raio)
+        }
+    }
+    const c1 = new Circulo(3)
+    const q1 = new Quadrado(4)
+    console.log(`A area do circulo é ${c1.calculaArea()}`)
+    console.log(`A area do quadrado é ${q1.calculaArea()}`)
+</script>
+
+</body>
+</html>
