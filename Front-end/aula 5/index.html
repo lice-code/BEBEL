@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function testandoArvoreDOM(){
+            
+            var element = document.documentElement.lastChild;
+            alert("Eu sou o node: "+ element.nodeName)
+
+            var outroElemento = document.getElementsByTagName('h1')[0];
+            alert("Eu sou o node: "+ outroElemento.nodeName)
+
+            var filho = outroElemento.firstChild;
+            alert("Eu sou o node: "+ filho.nodeValue);
+        }
+    </script>
+</head>
+<body>
+    <h1>Teste</h1>
+    <p>
+        voce esta apredendo a utilizar arvores em DOM?
+       <button><a href="www.google.com">Google</a></button>
+    </p>
+    <span onclick="testandoArvoreDOM();">Clique aqui para testar</span>
+</body>
+</html>

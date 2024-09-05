@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="revisao.js"></script>
+    <title>Revisão</title>
+</head>
+<body>
+    <script>
+        class Carro {
+    constructor(marca, modelo, ano, cor) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+    }
+
+    
+    descrever() {
+        return `Carro: ${this.marca} ${this.modelo}, Ano: ${this.ano}, Cor: ${this.cor}`;
+    }
+}
+
+
+const meuCarro = new Carro("Toyota", "Corolla", 2020, "Preto");
+
+
+console.log(meuCarro.descrever());
+
+    </script>
+</body>
+</html>

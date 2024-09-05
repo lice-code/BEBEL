@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura de CSV</title>
+</head>
+<body>
+    
+    <h1>Carregar arquivo CSV</h1>
+    
+    <!-- Formulário para selecionar e enviar o arquivo CSV -->
+    <h2>Autor</h2>
+    <form id="AutorCSV">
+        <input type="file" id="arquivoCSV" accept=".csv">
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <br> <br>
+    <h2>Livro</h2>
+    <form id="LivroCSV">
+        <input type="file" id="arquivoCSV" accept=".csv">
+        <button type="submit">Enviar</button>
+    </form>
+   
+    <br> <br>
+   <h2>Estudante</h2>
+    <form id="EstudanteCSV">
+        <input type="file" id="arquivoCSV" accept=".csv">
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <br> <br>
+   <h2>Emprestimo</h2>
+    <form id="EmprestimoCSV">
+        <input type="file" id="arquivoCSV" accept=".csv">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Mover o script para o final do body -->
+    <script>
+        class Autor{
+        constructor(id, nome, data_nascimento){
+        this.id = id
+        this.nome = nome
+        this.data_nascimento = data_nascimento
+         }
+        infoautor(){
+            console.log(`${this.id + this.nome + this.data_nascimento}`);
+        }
+    }
+
+        let lista_autores = []; 
+        
+        
+        function lerArquivoCSV(arquivo, callback) {
+            const leitor = new FileReader();
+
+            leitor.onload = function (evento) {
+                const conteudo = evento.target.result;
+                callback(conteudo);
+            };
+
+            leitor.readAsText(arquivo);
+        }
+
+        function converterCSVparaArray(conteudoCSV) {
+            const linhas = conteudoCSV.split('\n');
+            const arrayCSV = [];
+
+            linhas.forEach(function (linha) {
+                const valores = linha.split(',');
+                arrayCSV.push(valores);
+            });
+
+            return arrayCSV;
+        }
+
+        // Selecionar o formulário e adicionar o evento de submissão
+        const autorCSV = document.getElementById('AutorCSV');
+
+        autorCSV.addEventListener('submit', function (evento) {
+            evento.preventDefault(); // Impede o envio padrão do formulário
+
+            const inputArquivo = document.getElementById('arquivoCSV');
+            const arquivo = inputArquivo.files[0]; // Seleciona o arquivo CSV
+
+            if (arquivo) {
+                lerArquivoCSV(arquivo, function (conteudo) {
+                    const arrayCSV = converterCSVparaArray(conteudo);
+                    console.log(arrayCSV);
+
+                    arrayCSV.forEach(function (linha) {
+                        console.log(linha);
+                        const arrayinfo = [];
+
+                        linha.forEach(function (info) {
+                            const valores = info.split(';');
+                            arrayinfo.push(valores);
+                            //console.log(arrayinfo)
+                            const id = arrayinfo[0];
+                            const nome = arrayinfo[1];
+                            const data_nascimento = arrayinfo[2];
+                            let a = new Autor (id, nome, data_nascimento);   
+                            //lista_autores.add(a); 
+                        });
+                        console.log(lista_autores); 
+                    });                    
+                });
+            } 
+            else {
+                console.error("Nenhum arquivo selecionado");
+            }
+            });
+
+    </script>
+</body>
+</html>

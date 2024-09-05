@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Validação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulário de Contato</h2>
+
+    <form id="meuFormulario">
+        <div class="error" id="erroNome">Por favor, preencha o campo de nome.</div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+
+        <div class="error" id="erroEmail">Por favor, insira um email válido.</div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+            // Evita o envio do formulário
+            event.preventDefault();
+
+            // Oculta todas as mensagens de erro
+            document.getElementById('erroNome').style.display = 'none';
+            document.getElementById('erroEmail').style.display = 'none';
+
+            // Obtém os valores dos campos de nome e email
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            let valid = true;
+
+            // Verifica se o campo de nome está vazio
+            if (nome === '') {
+                document.getElementById('erroNome').style.display = 'block';
+                valid = false;
+            }
+
+            // Verifica se o campo de email está vazio ou inválido
+            if (email === '' || !validarEmail(email)) {
+                document.getElementById('erroEmail').style.display = 'block';
+                valid = false;
+            }
+
+            // Se todos os campos forem válidos, permite o envio do formulário
+            if (valid) {
+                alert('Formulário enviado com sucesso!');
+                // Aqui você pode adicionar o código para enviar o formulário, se necessário
+                // document.getElementById('meuFormulario').submit();
+            }
+        });
+
+        // Função para validar o formato do email
+        function validarEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+    
+</body>
+</html>

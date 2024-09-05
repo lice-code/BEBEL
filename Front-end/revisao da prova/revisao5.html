@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular Lista com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="minhaLista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button onclick="adicionarItem()">Adicionar Item</button>
+    <button onclick="removerItem()">Remover Último Item</button>
+
+    <script>
+        function adicionarItem() {
+            
+            const lista = document.getElementById('minhaLista');
+
+            const novoItem = document.createElement('li');
+            novoItem.textContent = `Item ${lista.children.length + 1}`;
+
+            lista.appendChild(novoItem);
+        }
+
+        function removerItem() {
+            
+            const lista = document.getElementById('minhaLista');
+
+            if (lista.children.length > 0) {
+               
+                lista.removeChild(lista.lastChild);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20PX;
+        }
+
+h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+th {
+            background-color: #f2f2f2;
+        }
+
+.form-container {
+            margin-top: 20px;
+        }
+
+.form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+.form-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+.form-container button:hover {
+            background-color: #315983;
+        }
+
+header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+.container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+.card {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+.card-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+.card-body:hover {
+            background-color: #315983;
+        }
+
+.card-body {
+            padding: 10px;
+            text-align: center;
+        }
+
+.card-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+.card-link {
+            display: block;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+th {
+            background-color: #f2f2f2;
+        }
+
+.form-container {
+            margin-top: 20px;
+        }
+
+.form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+.form-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+.form-container button:hover {
+            background-color: #315983;
+        }
+
+img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            padding-top: 50px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        h2{
+            text-align: left;
+        }
