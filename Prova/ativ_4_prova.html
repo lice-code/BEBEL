@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            p {
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Este é o primeiro parágrafo.</p>
+        <p>Este é o segundo parágrafo.</p>
+        <p>Este é o terceiro parágrafo.</p>
+    
+        <script>
+            const paragrafos = document.querySelectorAll('p');
+            
+            paragrafos.forEach(paragrafo => {
+                paragrafo.textContent = 'Parágrafo alterado pelo JS';
+            });
+        </script> 
+
+</body>
+</html>

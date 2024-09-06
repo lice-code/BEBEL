@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    class animal {
+        constructor(nome, idade, som) {
+        this.nome;
+        this.idade;
+        this.cor;
+    }
+    emitirSom() {
+    console.log (`O animal ${this.nome} que tem ${this.idade} anos e faz esse som: ${this.cor}`);
+}
+ }
+
+
+
+
+class cavalo extends animal {
+    constructor (nome, idade, som, cor) {
+        super(nome, idade, som);
+        this.cor = cor;
+    }
+    correr() {
+        console.log(`${this.nome} está correndo!`)
+    }
+}
+
+
+
+
+class leao extends animal {
+    constructor (nome, idade, som, forca) {
+        super(nome, idade, som);
+        this.forca = forca;
+    }
+    rugir() {
+        console.log(`${this.nome} ruge com força ${this.forca}!`)
+    }
+}
+
+
+
+
+
+const leao = new leao ('Simbarinho',2,'Roar', 'Beje meio dourado');
+leao.rugir();
+leao.forca();
+
+
+const cavalo = new cavalo ('Spirit',5,'Relincho', 'Branco com cinza');
+cavalo.emitirSom();
+cavalo.correr();
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
