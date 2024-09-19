@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Sistema de biblioteca</h1>
+    </div>
+
+<section>
+    <h1 id="Carregar">Carregar arquivo CSV</h1>
+    <!-- Formulário para selecionar e enviar o arquivo CSV -->
+    <form id="formCSV">
+        <div id="form-group">
+            <input type="file" id="arquivoCSV" accept=".csv">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</section>
+
+<div class="container">
+
+    <div class="box">
+        <button>LIVROS</button>
+        <div id="livros-data"></div>
+    </div>
+
+    <div class="box">
+        <button>AUTORES</button>
+        <div id="autores-data"></div>
+    </div>
+
+    <div class="box">
+        <button>ESTUDANTES</button>
+        <div id="estudantes-data"></div>
+    </div>
+
+    <div class="box">   
+        <button>EMPRESTIMO</button>
+        <div id="emprestimos-data"></div>
+    </div>
+    
+</div>
+
+<script src="script.js"></script>
+    <script src="autores.csv"></script>
+    <script src="emprestimo.csv"></script>
+    <script src="estudantes.csv"></script>
+    <script src="livros-1.csv"></script>
+</body>
+</html>
